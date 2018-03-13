@@ -1,0 +1,33 @@
+﻿body {
+    background-color: whitesmoke;
+}
+.floating-Field {
+    float: right;
+}
+.research-container {
+    margin: 15px 0 0 0;
+    background-color: lightsteelblue;
+    border: 2px solid darkgrey;
+    border-radius: 15px;
+}
+.research-value {
+    margin-bottom: 20px;
+}
+.research-radiobuttons {
+    padding-left: 15px;
+}
+
+.control-label {
+    font-size: 18px;
+    font-weight: bold;
+    font-weight: 300;
+    padding-top: 5px;
+}
+.export-button {
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 14px 40px;
+}
+.export-button:hover {
+    background-color: #4CAF50;
+}

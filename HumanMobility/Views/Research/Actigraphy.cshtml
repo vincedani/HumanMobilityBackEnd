@@ -1,0 +1,77 @@
+﻿@using HumanMobility.Helpers
+@model HumanMobility.Models.ResearchAccelerometerViewModel
+
+<h1>Accelerometer</h1>
+
+@using (Html.BeginForm("Actigraphy", "Research", FormMethod.Post, new {@class = "form-horizontal col-md-12"}))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <legend>Customise the export</legend>
+
+        @* _UserName *@
+        <div class="form-group">
+            @Html.LabelFor(m => m._UserName, htmlAttributes: new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m._UserName, new SelectList(ViewBag.Users), "Select user", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model._UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @* _From date *@
+        <div class="form-group">
+            @Html.LabelFor(m => m._From, htmlAttributes: new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model._From, htmlAttributes: new {@id = "afromDatePicker", @class = "form-control", @placeholder = "07/25/2017"})
+                @Html.ValidationMessageFor(model => model._From, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        @* To date *@
+        <div class="form-group">
+            @Html.LabelFor(m => m._To, htmlAttributes: new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model._To, htmlAttributes: new { @id = "atoDatePicker", @class = "form-control", @placeholder = "08/25/2017" })
+                @Html.ValidationMessageFor(model => model._To, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m._ActivityOptions, htmlAttributes: new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @foreach (var item in Enum.GetValues(typeof(DataAnalyzer.Entities.AcceptableActivityOptions)))
+                {
+                    <div class="row research-radiobuttons">
+                        <label class="control-label">
+                            @Html.RadioButtonFor(m => m._ActivityOptions, item, htmlAttributes: new { @checked = true })
+                            @EnumDisplayStringHelper.GetDisplayStringFromName(item.ToString())
+                        </label>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m._ExportOptions, htmlAttributes: new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @foreach (var item in Enum.GetValues(typeof(DataAnalyzer.Entities.AcceptableExportOptions)))
+                {
+                    <div class="row research-radiobuttons">
+                        <label class="control-label">
+                            @Html.RadioButtonFor(m => m._ExportOptions, item, htmlAttributes: new { @checked = true })
+                            @EnumDisplayStringHelper.GetDisplayStringFromName(item.ToString())
+                        </label>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-default">Cancel</button>
+            </div>
+        </div>
+    </fieldset>
+}

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanMobility", "HumanMobility\HumanMobility.csproj", "{257923E8-F107-4368-8C07-146A76CE9BA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineAnalyzer", "OfflineAnalyzer\OfflineAnalyzer.csproj", "{53D7E0D2-56E5-42C3-8708-F37E9B4EC1BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAnalyzer", "DataAnalyzerCL\DataAnalyzer.csproj", "{D1822683-C1F2-4A01-9399-C2D1B9F45E36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{257923E8-F107-4368-8C07-146A76CE9BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{257923E8-F107-4368-8C07-146A76CE9BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{257923E8-F107-4368-8C07-146A76CE9BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{257923E8-F107-4368-8C07-146A76CE9BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53D7E0D2-56E5-42C3-8708-F37E9B4EC1BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53D7E0D2-56E5-42C3-8708-F37E9B4EC1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53D7E0D2-56E5-42C3-8708-F37E9B4EC1BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53D7E0D2-56E5-42C3-8708-F37E9B4EC1BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1822683-C1F2-4A01-9399-C2D1B9F45E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1822683-C1F2-4A01-9399-C2D1B9F45E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1822683-C1F2-4A01-9399-C2D1B9F45E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1822683-C1F2-4A01-9399-C2D1B9F45E36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

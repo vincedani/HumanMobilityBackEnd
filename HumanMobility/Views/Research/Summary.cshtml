@@ -1,0 +1,23 @@
+﻿@model HumanMobility.Models.SummaryViewModel
+
+<h1>Location summary</h1>
+@using (Html.BeginForm("Summary", "Research", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Summary creation can take a while.</legend>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FromDate, htmlAttributes: new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.FromDate, htmlAttributes: new { @id = "summaryDatePicker", @class = "form-control", @placeholder = "07/25/2017" })
+                @Html.ValidationMessageFor(model => model.FromDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+}

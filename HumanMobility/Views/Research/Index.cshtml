@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Research";
+    @Styles.Render("~/Content/mainHM.css")
+}
+
+<div class="col-md-12">
+    <div class="col-md-6">
+        @Html.Partial("Search")
+
+        @Html.Partial("Summary")
+    </div>
+    
+    <div class="col-md-6">
+        @Html.Partial("Actigraphy")
+    </div>
+</div>

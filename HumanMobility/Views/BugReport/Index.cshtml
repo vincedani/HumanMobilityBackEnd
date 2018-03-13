@@ -1,0 +1,43 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<HumanMobility.Models.BugReport>
+
+@{
+    ViewBag.Title = "Bug reports";
+}
+<h1>Bug reports</h1>
+<br/>
+
+<div class="col-md-12">
+    @if (Model.TotalItemCount == 0)
+    {
+        <h2>Hurray! No bug reports!</h2>
+    }
+    else
+    {
+          <table>
+            <tr>
+                <th>User name</th>
+                <th>Date</th>
+                <th>Report message</th>
+            </tr>
+            @foreach (var bug in Model)
+            {
+                <tr>
+                    <td style="width: 15%">
+                        @Html.DisplayFor(b => bug.User.UserName)
+                    </td>
+
+                    <td style="width: 20%">
+                        @Html.DisplayFor(b => bug.Date)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(b => bug.Message)
+                    </td>
+                </tr>
+            }
+        </table>
+        <br/>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new {page}))
+    }
+</div>
